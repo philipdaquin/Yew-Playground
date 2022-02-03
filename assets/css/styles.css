@@ -1,4 +1,6 @@
 /*==================== GOOGLE FONTS ====================*/
+   
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800&display=swap');
 
 
 /*==================== VARIABLES CSS ====================*/
@@ -22,7 +24,7 @@
     --container-color: ;
 
     /*========== Font and typography ==========*/
-    --body-font: ;
+    --body-font: 'Poppins', sans-serif;
 
     /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
     --big-font-size: ;
@@ -67,9 +69,9 @@
     }
 }
 
-/*========== Variables Dark theme ==========*/
-
-
+body { 
+    font-family: var(--body-font);
+}
 /*========== Button Dark/Light ==========*/
 
 

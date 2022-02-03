@@ -16,7 +16,7 @@ pub enum AppRoute {
 }
 
 pub fn switch(routes: &AppRoute) -> Html { 
-     match routes { 
+    match routes { 
         AppRoute::Home => html! { <Home/>},
         AppRoute::About => html! { <About/>},
     }

@@ -18,7 +18,7 @@ impl Component for About {
     fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
             <>
-                <img src="https://http.cat/404.jpg" />
+                <img src="https://cms.qz.com/wp-content/uploads/2015/12/ap_651188993449.jpg?quality=75&strip=all&w=1200&h=900&crop=1" />
             </>
         }
 

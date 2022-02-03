@@ -11,13 +11,20 @@ pub struct Props {
 
 #[function_component(Hello)]
 pub fn return_hello(props: &Props) -> Html { 
+    let Props { name, num, children } = props; 
     return html! { 
         <div>
+            // <h1>{"Hello "}
+            //     {props.name.clone()}
+            //     {props.num.clone()}
+            //     //  For multiple children, you need to use for props.children.iter() 
+            //     { for props.children.iter()}
+            // </h1>
             <h1>{"Hello "}
-                {props.name.clone()}
-                {props.num.clone()}
+                {name}
+                {num}
                 //  For multiple children, you need to use for props.children.iter() 
-                { for props.children.iter()}
+                { for children.iter()}
             </h1>
         </div>
     }

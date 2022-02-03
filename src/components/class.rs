@@ -19,14 +19,18 @@ impl Component for Class {
         false
     }
     fn view(&self, ctx: &Context<Self>) -> Html {
+        let Props {name, num, children} = ctx.props();
+        //  let State {}
         html! {
             <>
-                <div>{"Hello"}
-
+                <div>
+                <h4>                
+                    {"Hello"}
                     // no need to use self.ctx => instead ctx.props...
-                    {ctx.props().name.clone()}
-                    {ctx.props().num.clone()}
-                    {for ctx.props().children.iter()}
+                    {name}
+                    {num}
+                    {for children.iter()}
+                </h4>
                 </div>
             </>
         }
