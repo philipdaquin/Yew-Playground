@@ -2,16 +2,19 @@ use std::rc::Rc;
 
 use yew::prelude::*;
 use crate::components::{
-    hello::Hello, class::Class, message::Message, counter::Counter,
+    hello::Hello, 
+    class::Class, 
+    message::Message, 
+    counter::Counter,
     function_click::FunctionClick, 
     class_click::ClassClick,
     event_bind::EventBind,
     parent_component::ParentComponent,
     child_component::Child,
+    user_greeting::Conditional,
     
 };
 pub struct Home;
-
 impl Component for Home { 
     type Message = ();
     type Properties = ();
@@ -31,11 +34,12 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                <ParentComponent prop1={"Lorem"} prop2={"Ipsum"}/>
-                
+                <Conditional/>
 
 
 
+
+                //<ParentComponent prop1={"Lorem"} prop2={"Ipsum"}/>
                 //<EventBind /> 
                 // <FunctionClick />
                 // <ClassClick />

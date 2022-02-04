@@ -12,3 +12,4 @@ pub mod parent_component;
 pub mod child_component;
 pub mod nested_child_with_props;
 pub mod inner_html;
+pub mod user_greeting;

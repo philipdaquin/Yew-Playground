@@ -18,7 +18,7 @@ impl Component for Footer {
     fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
             <>
-                
+                <div></div>
             </>
         }
 
