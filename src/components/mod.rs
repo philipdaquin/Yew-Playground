@@ -5,3 +5,5 @@ pub mod hello;
 pub mod class;
 pub mod message;
 pub mod counter;
+pub mod function_click;
+pub mod class_click;
