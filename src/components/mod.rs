@@ -7,3 +7,8 @@ pub mod message;
 pub mod counter;
 pub mod function_click;
 pub mod class_click;
+pub mod event_bind;
+pub mod parent_component;
+pub mod child_component;
+pub mod nested_child_with_props;
+pub mod inner_html;

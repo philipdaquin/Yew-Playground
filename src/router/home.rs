@@ -4,7 +4,11 @@ use yew::prelude::*;
 use crate::components::{
     hello::Hello, class::Class, message::Message, counter::Counter,
     function_click::FunctionClick, 
-    class_click::ClassClick
+    class_click::ClassClick,
+    event_bind::EventBind,
+    parent_component::ParentComponent,
+    child_component::Child,
+    
 };
 pub struct Home;
 
@@ -22,13 +26,19 @@ impl Component for Home {
         false
     }
     fn view(&self, ctx: &Context<Self>) -> Html {
+        
+        
         html! {
             <>
                 <div>
-                <FunctionClick />
-                <ClassClick />
+                <ParentComponent prop1={"Lorem"} prop2={"Ipsum"}/>
+                
 
 
+
+                //<EventBind /> 
+                // <FunctionClick />
+                // <ClassClick />
                 // <Counter/>
                 // <Message/>
                 // <div class="home">
