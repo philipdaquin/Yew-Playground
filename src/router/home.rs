@@ -12,6 +12,8 @@ use crate::components::{
     parent_component::ParentComponent,
     child_component::Child,
     user_greeting::Conditional,
+    name_list::NameList,
+    person::Person
     
 };
 pub struct Home;
@@ -34,11 +36,11 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                <Conditional/>
+                <NameList/>
+                <Person  id ={1} name={"Philip"} age={21} skill={"Rust"}/>
+                // <Person  id={1} name={"Philip"} age={31} skill={"Substrate"}/>
 
-
-
-
+                // <Conditional/>
                 //<ParentComponent prop1={"Lorem"} prop2={"Ipsum"}/>
                 //<EventBind /> 
                 // <FunctionClick />

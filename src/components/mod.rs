@@ -13,3 +13,5 @@ pub mod child_component;
 pub mod nested_child_with_props;
 pub mod inner_html;
 pub mod user_greeting;
+pub mod name_list; 
+pub mod person;

@@ -71,6 +71,8 @@
 
 body { 
     font-family: var(--body-font);
+    text-align: center;
+    background-color: antiquewhite;
 }
 /*========== Button Dark/Light ==========*/
 
