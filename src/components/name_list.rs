@@ -47,7 +47,7 @@ impl Persons {
 
 #[function_component(NameList)]
 pub fn name_list() -> Html { 
-    let names: Vec<String> = vec!["Bruce", "Clark", "Diana"]
+    let names: Vec<String> = vec!["Bruce", "Clark", "Diana", "Bruce"]
         .into_iter()
         .map(String::from)
         .collect(); 
@@ -78,7 +78,20 @@ pub fn name_list() -> Html {
             </>
         }
     }).collect::<Vec<_>>();
-    
+    let list_names = names.iter().enumerate().map(|(index, name)| { 
+        
+        html! { 
+            <>
+                <div key={(index)}>
+                    {index}
+                    {name}
+
+                </div>
+
+            </>
+        }
+    }).collect::<Html>(); 
+
     html! { 
         <>
             <div>
@@ -87,10 +100,11 @@ pub fn name_list() -> Html {
                 <h2>{&names[0]}</h2>
                 <h2>{&names[1]}</h2>            
                 <h2>{&names[2]}</h2>
+                <h2>{&names[3]}</h2>
+                {list_names}
 
-
-                <h2>{Names(names)}</h2> 
-                <span>{list}</span>     
+                <h2 >{Names(names)}</h2> 
+                <span >{list}</span>     
             </div>
             <div></div>
         </>
