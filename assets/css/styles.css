@@ -74,6 +74,10 @@ body {
     text-align: center;
     background-color: antiquewhite;
 }
+
+.primary { 
+    color: blueviolet;
+}
 /*========== Button Dark/Light ==========*/
 
 

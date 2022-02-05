@@ -95,7 +95,6 @@ pub fn name_list() -> Html {
     html! { 
         <>
             <div>
-          
                 <h2>{for names.iter()}</h2>
                 <h2>{&names[0]}</h2>
                 <h2>{&names[1]}</h2>            
