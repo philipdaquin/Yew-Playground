@@ -2,21 +2,7 @@ use std::rc::Rc;
 
 use yew::prelude::*;
 use crate::components::{
-    hello::Hello, 
-    class::Class, 
-    message::Message, 
-    counter::Counter,
-    function_click::FunctionClick, 
-    class_click::ClassClick,
-    event_bind::EventBind,
-    parent_component::ParentComponent,
-    child_component::Child,
-    user_greeting::Conditional,
-    name_list::NameList,
-    person::Person,
-    stylesheets::stylesheets::StyleSheets,
-    stylesheets::inline::Inline
-    
+    form_input::FormInput,
 };
 pub struct Home;
 impl Component for Home { 
@@ -38,7 +24,14 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                <Inline/>
+                    <FormInput/>
+
+
+
+
+
+
+                // <Inline/>
                 // <StyleSheets styles={true} />
                 // <NameList/>
                 // <Person  id ={1} name={"Philip"} age={21} skill={"Rust"}/>

@@ -16,3 +16,5 @@ pub mod user_greeting;
 pub mod name_list; 
 pub mod person;
 pub mod stylesheets;
+pub mod form_input;
+pub mod form_area;
