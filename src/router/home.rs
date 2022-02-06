@@ -3,6 +3,7 @@ use std::rc::Rc;
 use yew::prelude::*;
 use crate::components::{
     form_input::FormInput,
+    form_area::FormArea
 };
 pub struct Home;
 impl Component for Home { 
@@ -24,7 +25,8 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                    <FormInput/>
+                    <FormInput />
+                    <FormArea />
 
 
 

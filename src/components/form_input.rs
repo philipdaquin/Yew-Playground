@@ -1,5 +1,6 @@
 use web_sys::{Text, HtmlInputElement};
-use yew::{prelude::*, NodeRef, };
+use yew::{prelude::*, NodeRef,};
+
 
 
 
@@ -22,6 +23,10 @@ pub struct TextInputProps {
     #[prop_or_default]
     pub value: String,
 
+    
+    #[prop_or_default]
+    pub topics: String,
+
     #[prop_or_default]
     pub onchange: Callback<String>,
 
@@ -33,7 +38,8 @@ pub struct TextInputProps {
 // Signal the input element has changed
 pub enum TextMsg { 
     Changed(String),
-    Input(String)
+    Input(String),
+    Submit 
 }
 /// TEXTINPUT COmponent
 impl Component for FormInput { 
@@ -60,6 +66,11 @@ impl Component for FormInput {
                     ctx.props().onchange.emit(val)
                 }
             }
+            TextMsg::Submit => { 
+                if let Some(val) = self.extract_input() { 
+                    self.value = Some(val.clone())
+                }
+            }
         }
         true
     }
@@ -72,17 +83,34 @@ impl Component for FormInput {
        let onchange = ctx.link().batch_callback(move |_| { 
            input_ref.cast::<HtmlInputElement>().map(|input| TextMsg::Changed(input.value()))
        });
+       let oninput = ctx.link().callback(|input: InputEvent| TextMsg::Input(input.data().unwrap_or_default()));
+       let submit = ctx.link().callback(|_| TextMsg::Submit);
+
+
         html! {
             <>
-                <form>
+                <form onsubmit={submit}>
                 <div>
                     <label>{"Form Component"}</label>
                     <input 
                         type="text" 
-                        value={value} 
-                        onchange={onchange}    
+                        value={value.clone()} 
+                        onchange={onchange.clone()}    
+                        oninput={oninput}
                     />
+                   
+
                     </div>
+                    <div>
+                        <label>
+                            <select value={ctx.props().topics.clone()} onchange={onchange}>
+                                <option value={"React"}>{"React"}</option>
+                                <option value={"Rust"}>{"Rust"}</option>
+                                <option value={"Substrate"}>{"Substrate"}</option>
+                            </select>
+                        </label>
+                    </div>
+                    <button type="submit" >{"Submit"}</button>
                 </form>
             </>
         }
