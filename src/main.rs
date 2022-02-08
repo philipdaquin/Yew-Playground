@@ -5,6 +5,7 @@ mod service;
 pub mod components;
 mod hooks;
 pub mod router;
+pub mod contexts;
 
 
 use crate::app::App;

@@ -7,15 +7,33 @@ use crate::components::{
     purecomp::PureComp,
     regcomp::RegComp,
    // noderefs::Ref
-    
 };
-pub struct Home;
+use crate::contexts::{compc::CompC};
+
+#[derive(Clone, Debug, PartialEq)]
+pub struct UserContext { 
+    pub user_name: String
+}
+
+#[derive(PartialEq, Clone, Properties)]
+pub struct ContextProps { 
+    context: UserContext
+}
+
+
+pub struct Home { 
+    pub context: UserContext
+}
 impl Component for Home { 
     type Message = ();
-    type Properties = ();
+    type Properties = ContextProps;
 
     fn create(ctx: &Context<Self>) -> Self {
-        Self
+        Self { 
+            context:  UserContext { 
+                user_name: "asdsd".to_owned()
+            }
+        }
     }
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         true
@@ -29,26 +47,30 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                // <Ref />
-                // <PureComp />
-                // <RegComp />
-                //  <Table />
-                //  <LifeCycleA />
-                // <FormInput />
-                // <FormArea />
-                // <Inline/>
-                // <StyleSheets styles={true} />
-                // <NameList/>
-                // <Person  id ={1} name={"Philip"} age={21} skill={"Rust"}/>
-                // <Person  id={1} name={"Philip"} age={31} skill={"Substrate"}/>
-                // <Conditional/>
-                //<ParentComponent prop1={"Lorem"} prop2={"Ipsum"}/>
-                //<EventBind /> 
-                // <FunctionClick />
-                // <ClassClick />
-                // <Counter/>
-                // <Message/>
-                // <div class="home">
+                    <ContextProvider<UserContext> context={self.props.context}>
+                        <CompC />
+                    </ContextProvider<UserContext>>
+
+                    // <Ref />
+                    // <PureComp />
+                    // <RegComp />
+                    //  <Table />
+                    //  <LifeCycleA />
+                    // <FormInput />
+                    // <FormArea />
+                    // <Inline/>
+                    // <StyleSheets styles={true} />
+                    // <NameList/>
+                    // <Person  id ={1} name={"Philip"} age={21} skill={"Rust"}/>
+                    // <Person  id={1} name={"Philip"} age={31} skill={"Substrate"}/>
+                    // <Conditional/>
+                    //<ParentComponent prop1={"Lorem"} prop2={"Ipsum"}/>
+                    //<EventBind /> 
+                    // <FunctionClick />
+                    // <ClassClick />
+                    // <Counter/>
+                    // <Message/>
+                    // <div class="home">
                     // <Hello name={"WALICE"} num={2}>
                     //     <p>{"THis is Children Props "}</p>
                     //     <p>{"THis is Children Props "}</p>
@@ -60,12 +82,11 @@ impl Component for Home {
                     //     <p>{"sdasdasd"}</p>
                     //     <p>{"This is oming from a shared property "}</p>
                     // </Class>
-                //
-                //     <img class="profile-picture" src="assets/images/avatar.jpg" alt="ShironCat's avatar" />
-                //     <h1>{ "Hello, World!" }</h1>
-                //     <img src="https://http.cat/404.jpg" />
-                //</div>
-
+                    //
+                    //     <img class="profile-picture" src="assets/images/avatar.jpg" alt="ShironCat's avatar" />
+                    //     <h1>{ "Hello, World!" }</h1>
+                    //     <img src="https://http.cat/404.jpg" />
+                    //</div>
                 </div>
             </>
         }
