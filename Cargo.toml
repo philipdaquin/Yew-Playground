@@ -18,7 +18,8 @@ anyhow = "1.0.32"
 gloo-utils="0.1.2"
 gloo-console ="0.2.1" 
 gloo = "0.6"
-
+reqwasm = "0.4.0"
+wasm-bindgen-futures = "0.4.29"
 
 
 [dependencies.web-sys]

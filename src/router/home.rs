@@ -9,31 +9,16 @@ use crate::components::{
    // noderefs::Ref
 };
 use crate::contexts::{compc::CompC};
+use crate::service::{postlist::PostList};
 
-#[derive(Clone, Debug, PartialEq)]
-pub struct UserContext { 
-    pub user_name: String
-}
+pub struct Home;
 
-#[derive(PartialEq, Clone, Properties)]
-pub struct ContextProps { 
-    context: UserContext
-}
-
-
-pub struct Home { 
-    pub context: UserContext
-}
 impl Component for Home { 
     type Message = ();
-    type Properties = ContextProps;
+    type Properties = ();
 
     fn create(ctx: &Context<Self>) -> Self {
-        Self { 
-            context:  UserContext { 
-                user_name: "asdsd".to_owned()
-            }
-        }
+        Self
     }
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         true
@@ -47,9 +32,7 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                    <ContextProvider<UserContext> context={self.props.context}>
-                        <CompC />
-                    </ContextProvider<UserContext>>
+                   <PostList />
 
                     // <Ref />
                     // <PureComp />
