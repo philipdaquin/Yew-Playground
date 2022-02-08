@@ -1,40 +1,55 @@
+use web_sys::HtmlInputElement;
 use yew::prelude::*;
-
-pub enum Msg {
-    Hover,
+use gloo_utils;
+pub struct Ref { 
+    my_input: NodeRef
 }
 
-#[derive(Properties, PartialEq, Clone)]
-pub struct Props {
-    pub on_hover: Callback<()>,
+pub enum Msg { 
+    InputValue(String)
 }
 
-pub struct Ref;
-
-impl Component for Ref {
+impl Component for Ref { 
     type Message = Msg;
-    type Properties = Props;
+    type Properties = ();
 
-    fn create(_ctx: &Context<Self>) -> Self {
-        Self
+    fn create(ctx: &Context<Self>) -> Self {
+        Self { 
+            my_input: NodeRef::default()
+        }
     }
-
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
-        match msg {
-            Msg::Hover => {
-                ctx.props().on_hover.emit(());
-                false
-            }
+        
+        match msg { 
+            Msg::InputValue(value) => { 
+                let window = gloo_utils::window();
+                window.alert_with_message(&value).unwrap();
         }
+        }
+  
+        true
+    }
+    fn changed(&mut self, ctx: &Context<Self>) -> bool {
+        false
+    }
+    fn view(&self, ctx: &Context<Self>) -> Html {
+        let my_input_ref = self.my_input.clone();
+
+        let oninput = ctx.link().batch_callback(move |_| { 
+            let input = my_input_ref.cast::<HtmlInputElement>();
+            input.map(|input| Msg::InputValue(input.value()))
+
+        });
+
+        html! {
+            <>
+                <div>
+                    <input type="text" ref={self.my_input.clone()} oninput={oninput}/>
+                    <button oninput={onclick}>{"Click"}</button>
+                </div>
+            </>
+        }
+
     }
 
-    fn view(&self, ctx: &Context<Self>) -> Html {
-        html! {
-            <input
-                type="text"
-                class="input-component"
-                onmouseover={ctx.link().callback(|_| Msg::Hover)}
-            />
-        }
-    }
 }
