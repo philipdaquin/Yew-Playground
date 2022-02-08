@@ -6,7 +6,7 @@ use crate::components::{
     table::Table,
     purecomp::PureComp,
     regcomp::RegComp,
-    noderefs::Ref
+   // noderefs::Ref
     
 };
 pub struct Home;
@@ -29,7 +29,7 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                <Ref />
+                // <Ref />
                 // <PureComp />
                 // <RegComp />
                 //  <Table />
