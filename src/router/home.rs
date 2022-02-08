@@ -2,7 +2,8 @@ use std::rc::Rc;
 
 use yew::prelude::*;
 use crate::components::{
-    lifecycleA::LifeCycleA
+    lifecycleA::LifeCycleA,
+    table::Table
     
 };
 pub struct Home;
@@ -25,9 +26,10 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                    <LifeCycleA />
+                <Table />
 
 
+                //  <LifeCycleA />
                 // <FormInput />
                 // <FormArea />
                 // <Inline/>

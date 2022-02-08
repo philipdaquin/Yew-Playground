@@ -19,3 +19,5 @@ pub mod header;
 // pub mod form_input;
 // pub mod form_area;
 pub mod lifecycleA;
+pub mod table;
+pub mod columns;
