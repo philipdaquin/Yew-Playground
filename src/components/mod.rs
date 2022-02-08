@@ -21,3 +21,7 @@ pub mod header;
 pub mod lifecycleA;
 pub mod table;
 pub mod columns;
+pub mod purecomp;
+pub mod regcomp;
+pub mod parentcomp;
+pub mod noderefs;

@@ -3,7 +3,10 @@ use std::rc::Rc;
 use yew::prelude::*;
 use crate::components::{
     lifecycleA::LifeCycleA,
-    table::Table
+    table::Table,
+    purecomp::PureComp,
+    regcomp::RegComp,
+    noderefs::Ref
     
 };
 pub struct Home;
@@ -26,9 +29,10 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                <Table />
-
-
+                <Ref />
+                // <PureComp />
+                // <RegComp />
+                //  <Table />
                 //  <LifeCycleA />
                 // <FormInput />
                 // <FormArea />

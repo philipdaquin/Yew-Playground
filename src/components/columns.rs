@@ -16,7 +16,7 @@ pub fn columns() -> Html {
             <div>
                 {items}
                 <td>{"Name: "}</td>
-                <td>{"Philip Daquin"}</td>
+                <td>{"Phildip Daquin"}</td>
             </div>
         </>
     }
