@@ -6,10 +6,12 @@ use crate::components::{
     table::Table,
     purecomp::PureComp,
     regcomp::RegComp,
-   // noderefs::Ref
+   // noderefs::Ref,
+   portaldemo::PortalDemo
 };
 use crate::contexts::{compc::CompC};
 use crate::service::{postlist::PostList};
+
 
 pub struct Home;
 
@@ -32,8 +34,12 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                   <PostList />
+                    <PortalDemo />                   
 
+                    // <div class="root"></div>
+                    // <div id="portal-root"></div>
+
+                    <PostList />
                     // <Ref />
                     // <PureComp />
                     // <RegComp />
