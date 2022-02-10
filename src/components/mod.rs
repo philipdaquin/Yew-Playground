@@ -26,3 +26,5 @@ pub mod regcomp;
 pub mod parentcomp;
 //pub mod noderefs;
 pub mod portaldemo;
+pub mod errorhandling;
+pub mod errorboundary;

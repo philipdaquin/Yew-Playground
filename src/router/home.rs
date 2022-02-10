@@ -7,7 +7,8 @@ use crate::components::{
     purecomp::PureComp,
     regcomp::RegComp,
    // noderefs::Ref,
-   portaldemo::PortalDemo
+   portaldemo::PortalDemo,
+   errorhandling::Hero
 };
 use crate::contexts::{compc::CompC};
 use crate::service::{postlist::PostList};
@@ -34,7 +35,8 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                    <PortalDemo />                   
+                    <PortalDemo />
+                    <Hero name={"Hello"}/>                   
 
                     // <div class="root"></div>
                     // <div id="portal-root"></div>
