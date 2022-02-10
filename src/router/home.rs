@@ -8,7 +8,8 @@ use crate::components::{
     regcomp::RegComp,
    // noderefs::Ref,
    portaldemo::PortalDemo,
-   errorhandling::Hero
+   errorhandling::Hero,
+   errorboundary::ErrorBoundary
 };
 use crate::contexts::{compc::CompC};
 use crate::service::{postlist::PostList};
@@ -35,13 +36,39 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                    <PortalDemo />
-                    <Hero name={"Hello"}/>                   
+                    <ErrorBoundary >
+                        <Hero name={"Man"}/>
+                        <Hero name={"Man"}/>
+                        <Hero name={"Man"}/>
+                    </ ErrorBoundary>
 
+                    <ErrorBoundary> 
+                        <Hero name={"Joker"}/>
+                    </ErrorBoundary>
+                    
+                    <ErrorBoundary> 
+                        <Hero name={"hello"}/>
+                    </ErrorBoundary>
+                    
+                    <ErrorBoundary> 
+                        <Hero name={"hello"}/>
+                    </ErrorBoundary>   
+                    
+                </div>
+
+
+
+
+
+
+
+
+                    // <PortalDemo />
+                    // <Hero name={"Hello"}/>                   
                     // <div class="root"></div>
                     // <div id="portal-root"></div>
 
-                    <PostList />
+                    // <PostList />
                     // <Ref />
                     // <PureComp />
                     // <RegComp />
@@ -78,7 +105,7 @@ impl Component for Home {
                     //     <h1>{ "Hello, World!" }</h1>
                     //     <img src="https://http.cat/404.jpg" />
                     //</div>
-                </div>
+               
             </>
         }
     }
