@@ -6,6 +6,7 @@ pub mod components;
 mod hooks;
 pub mod router;
 pub mod contexts;
+pub mod higherordercomp;
 
 
 use crate::app::App;

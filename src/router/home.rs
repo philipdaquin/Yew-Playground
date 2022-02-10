@@ -13,6 +13,9 @@ use crate::components::{
 };
 use crate::contexts::{compc::CompC};
 use crate::service::{postlist::PostList};
+use crate::higherordercomp::{clickcounter::ClickCounter,
+    hovercounter::HoverCount
+};
 
 
 pub struct Home;
@@ -36,31 +39,27 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                    <ErrorBoundary >
-                        <Hero name={"Man"}/>
-                        <Hero name={"Man"}/>
-                        <Hero name={"Man"}/>
-                    </ ErrorBoundary>
-
-                    <ErrorBoundary> 
-                        <Hero name={"Joker"}/>
-                    </ErrorBoundary>
-                    
-                    <ErrorBoundary> 
-                        <Hero name={"hello"}/>
-                    </ErrorBoundary>
-                    
-                    <ErrorBoundary> 
-                        <Hero name={"hello"}/>
-                    </ErrorBoundary>   
-                    
+                    <ClickCounter />
+                    <HoverCount />
                 </div>
+                    // <ErrorBoundary >
+                    //     <Hero name={"Man"}/>
+                    //     <Hero name={"Man"}/>
+                    //     <Hero name={"Man"}/>
+                    // </ ErrorBoundary>
 
-
-
-
-
-
+                    // <ErrorBoundary> 
+                    //     <Hero name={"Joker"}/>
+                    // </ErrorBoundary>
+                    
+                    // <ErrorBoundary> 
+                    //     <Hero name={"hello"}/>
+                    // </ErrorBoundary>
+                    
+                    // <ErrorBoundary> 
+                    //     <Hero name={"hello"}/>
+                    // </ErrorBoundary>   
+                    
 
 
                     // <PortalDemo />
