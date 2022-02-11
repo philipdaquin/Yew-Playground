@@ -1,42 +1,31 @@
 use yew::prelude::*;
-use crate::higherordercomp::with_counter::NewComponent;
-
-
-
-
+use crate::higherordercomp::with_counter::{OriginalComponent, Props, Msg};
 
 pub struct ClickCounter { 
-    pub count: i32
-}
-
-pub enum Msg {
-    Increment
+    pub props: Props
 }
 
 impl Component for ClickCounter {
     type Message = Msg;
-    type Properties = ();
+    type Properties = Props;
 
     fn create(ctx: &Context<Self>) -> Self {
         Self { 
-            count: 0
+            props: ctx.props().clone()
         }
     }
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
-        match msg { 
-            Msg::Increment => { 
-                self.count = self.count + 1;
-                true
-            }
-        }
+        true
     }
 
     fn view(&self, ctx: &Context<Self>) -> Html {
-        
+
+        let Props { count, increment_count }  = self.props.clone();
+
         html! {
             <>
                 <button onclick={ctx.link().callback(|_| Msg::Increment)}>
-                    { format!("Click {} times", self.count.clone()) } 
+                    { format!("Click {} times", count) } 
                 </button>
             </>
         }

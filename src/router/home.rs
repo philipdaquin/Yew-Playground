@@ -14,7 +14,8 @@ use crate::components::{
 use crate::contexts::{compc::CompC};
 use crate::service::{postlist::PostList};
 use crate::higherordercomp::{clickcounter::ClickCounter,
-    hovercounter::HoverCount
+    hovercounter::HoverCount,
+    with_counter::OriginalComponent
 };
 
 
@@ -41,6 +42,7 @@ impl Component for Home {
                 <div>
                     <ClickCounter />
                     <HoverCount />
+                    // < OriginalComponent/>
                 </div>
                     // <ErrorBoundary >
                     //     <Hero name={"Man"}/>
