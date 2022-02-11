@@ -15,8 +15,17 @@ use crate::contexts::{compc::CompC};
 use crate::service::{postlist::PostList};
 use crate::higherordercomp::{clickcounter::ClickCounter,
     hovercounter::HoverCount,
-    with_counter::OriginalComponent
+    with_counter::OriginalComponent,
 };
+use crate::renderprop::{clickcountertwo::ClickCounterTwo,
+    hovercountertwo::HoverCounterTwo,
+    user::User
+};
+
+fn name(input: &str) -> String { 
+    input.to_string()
+}
+
 
 
 pub struct Home;
@@ -35,15 +44,17 @@ impl Component for Home {
         false
     }
     fn view(&self, ctx: &Context<Self>) -> Html {
-        
-        
         html! {
             <>
                 <div>
-                    <ClickCounter />
-                    <HoverCount />
-                    // < OriginalComponent/>
+                    <ClickCounterTwo />
+                    <HoverCounterTwo />
+                    <User name={}/>
                 </div>
+                    // <ClickCounter />
+                    // <HoverCount />
+                    // < OriginalComponent/>
+                
                     // <ErrorBoundary >
                     //     <Hero name={"Man"}/>
                     //     <Hero name={"Man"}/>
@@ -61,14 +72,10 @@ impl Component for Home {
                     // <ErrorBoundary> 
                     //     <Hero name={"hello"}/>
                     // </ErrorBoundary>   
-                    
-
-
                     // <PortalDemo />
                     // <Hero name={"Hello"}/>                   
                     // <div class="root"></div>
                     // <div id="portal-root"></div>
-
                     // <PostList />
                     // <Ref />
                     // <PureComp />
@@ -106,7 +113,6 @@ impl Component for Home {
                     //     <h1>{ "Hello, World!" }</h1>
                     //     <img src="https://http.cat/404.jpg" />
                     //</div>
-               
             </>
         }
     }

@@ -7,7 +7,7 @@ mod hooks;
 pub mod router;
 pub mod contexts;
 pub mod higherordercomp;
-
+pub mod renderprop;
 
 use crate::app::App;
 
