@@ -49,7 +49,7 @@ impl Component for Home {
                 <div>
                     <ClickCounterTwo />
                     <HoverCounterTwo />
-                    <User name={}/>
+                    //<User name={}/>
                 </div>
                     // <ClickCounter />
                     // <HoverCount />
