@@ -12,7 +12,7 @@ use crate::components::{
    errorboundary::ErrorBoundary
 };
 use crate::contexts::{compc::CompC};
-use crate::service::postlist::*;
+use crate::service::postform::*;
 use crate::higherordercomp::{clickcounter::ClickCounter,
     hovercounter::HoverCount,
     with_counter::OriginalComponent,
@@ -22,11 +22,7 @@ use crate::renderprop::{clickcountertwo::ClickCounterTwo,
     user::User
 };
 
-fn name(input: &str) -> String { 
-    input.to_string()
-}
-
-
+use crate::service::{postform::*, };
 
 pub struct Home;
 
@@ -47,8 +43,11 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                    <ClickCounterTwo />
-                    <HoverCounterTwo />
+                    <PostForm />
+
+
+                    // <ClickCounterTwo />
+                    // <HoverCounterTwo />
                     //<User name={}/>
                 </div>
                     // <ClickCounter />
