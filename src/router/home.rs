@@ -13,7 +13,8 @@ use crate::components::{
 };
 use crate::contexts::{compc::CompC};
 use crate::service::postform::*;
-use crate::higherordercomp::{clickcounter::ClickCounter,
+use crate::higherordercomp::{
+    clickcounter::ClickCounter,
     hovercounter::HoverCount,
     with_counter::OriginalComponent,
 };
@@ -21,8 +22,9 @@ use crate::renderprop::{clickcountertwo::ClickCounterTwo,
     hovercountertwo::HoverCounterTwo,
     user::User
 };
-
 use crate::service::{postform::*, };
+use crate::hooks::{};
+use crate::hooks::{hookcounter::*, hookcounter2::*};
 
 pub struct Home;
 
@@ -43,9 +45,11 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                    <PostForm />
+                    <HookCounter/>
 
+                    <HookCounterTwo />
 
+                    //<PostForm />
                     // <ClickCounterTwo />
                     // <HoverCounterTwo />
                     //<User name={}/>

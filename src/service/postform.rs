@@ -7,7 +7,7 @@ pub struct PostForm {
 }
 
 pub enum Msg {
-    OnChange(String)
+    OnChange
 }
 
 impl Component for PostForm {
@@ -24,7 +24,7 @@ impl Component for PostForm {
 
     fn view(&self, ctx: &Context<Self>) -> Html {
         let PostForm { user_id, title, body} = self;
-        let onchange = ctx.link().callback(|e: Event| Msg::OnChange(e.target().to_strng()))
+        let onchange = ctx.link().callback(|e: Event| Msg::OnChange);
 
         return html! {
             <>
