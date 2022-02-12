@@ -12,7 +12,7 @@ use crate::components::{
    errorboundary::ErrorBoundary
 };
 use crate::contexts::{compc::CompC};
-use crate::service::{postlist::PostList};
+use crate::service::postlist::*;
 use crate::higherordercomp::{clickcounter::ClickCounter,
     hovercounter::HoverCount,
     with_counter::OriginalComponent,
