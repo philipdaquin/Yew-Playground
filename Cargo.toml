@@ -22,7 +22,7 @@ reqwasm = "0.4.0"
 wasm-bindgen-futures = "0.4.29"
 reqwest = { version = "0.11.7", features = ["json"] }
 #yew-functional = { rev="d1f15b6f862d555023c18a48c5fb154e539be22b",  git = "https://github.com/yewstack/yew" }
-
+rand = "0.8.4"
 
 wee_alloc = "0.4.5"
 

@@ -11,6 +11,7 @@ dependencies = [
  "gloo-console",
  "gloo-utils",
  "js-sys",
+ "rand",
  "reqwasm",
  "reqwest",
  "serde",
