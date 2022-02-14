@@ -17,14 +17,14 @@ pub fn counterhook4() -> Html {
         id: 0,
         value: 0
     });
-    let set_items = { 
-        let item = item.clone();
-        Callback::from(move |_|  {
-            let mut info = (*item).clone();
-            info.id = 0i32;
-            info.value = 0i32
-        })
-    };
+    // let set_items = { 
+    //     let item = item.clone();
+    //     Callback::from(move |(_)|  {
+    //         let mut info = (*item).clone();
+    //         info.id = 0i32;
+    //         info.value = 0i32
+    //     })
+    // };
     let add_item = { 
         let item = item.clone();
         Callback::from(move |_| { 
@@ -41,13 +41,13 @@ pub fn counterhook4() -> Html {
         <div>
             <button onclick={add_item}>{"Add A Number"}</button>
             <ul>
-                {
-                    for item.map(|item| { 
-                        html! { 
+            
+                    // for item.map(|item| { 
+                    //     html! { 
 
-                        }
-                    }).iter()
-                }
+                    //     }
+                    // }).iter()
+               
             </ul>
         </div>
         </>

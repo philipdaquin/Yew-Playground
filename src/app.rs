@@ -10,7 +10,8 @@ use crate::{
         home::Home,
         about::About,
         switch,
-    }
+    },
+    
 };
 
 pub struct App;

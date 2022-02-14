@@ -25,7 +25,9 @@ use crate::renderprop::{clickcountertwo::ClickCounterTwo,
 use crate::service::{postform::*, };
 use crate::hooks::{};
 use crate::hooks::{hookcounter::*, hookcounter2::*, hookcounter3::*};
-
+use crate::use_effect::{
+    hookcounterone::HookCounterOne
+};
 pub struct Home;
 
 impl Component for Home { 
@@ -50,6 +52,8 @@ impl Component for Home {
                     <HookCounterTwo />
 
                     <HookCounterThree />
+
+                    <HookCounterOne/>
 
                     //<PostForm />
                     // <ClickCounterTwo />
