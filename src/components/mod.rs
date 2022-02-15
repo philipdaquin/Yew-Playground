@@ -29,3 +29,4 @@ pub mod portaldemo;
 pub mod errorhandling;
 pub mod errorboundary;
 pub mod mousemovement;
+pub mod intervalclasscounter;
