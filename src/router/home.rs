@@ -9,7 +9,8 @@ use crate::components::{
    // noderefs::Ref,
    portaldemo::PortalDemo,
    errorhandling::Hero,
-   errorboundary::ErrorBoundary
+   errorboundary::ErrorBoundary,
+   mousemovement::MouseMovement
 };
 use crate::contexts::{compc::CompC};
 use crate::service::postform::*;
@@ -48,12 +49,10 @@ impl Component for Home {
             <>
                 <div>
                     <HookCounter/>
-
                     <HookCounterTwo />
-
                     <HookCounterThree />
-
                     <HookCounterOne/>
+                    <MouseMovement/>
 
                     //<PostForm />
                     // <ClickCounterTwo />

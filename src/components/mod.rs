@@ -28,3 +28,4 @@ pub mod parentcomp;
 pub mod portaldemo;
 pub mod errorhandling;
 pub mod errorboundary;
+pub mod mousemovement;

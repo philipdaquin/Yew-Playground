@@ -1,6 +1,10 @@
+use gloo::events::EventListener;
 use yew::{prelude::*, function_component, html, Html};
 use gloo_console::{self as console, 
+
     
+
+
 };
 use gloo_utils::{window};
 #[function_component(HookMouse)]
@@ -26,16 +30,22 @@ pub fn hook_mouse() -> Html {
             y.set(e.client_y());
         });  
         
-        use_effect(move || { 
-            console::log!("Use Effect called!");
-            window().add_event_listener_with_callback("mousemove", log_mouse_movement)
-        })
+        // use_effect_with_deps(
+        //     move |_| { 
+        //         console::log!("Use Effect called!");
+        //             let window = windows();
+        //             let onmove = EventListener::new(&window, "mousemove", move |e: MouseEvent| { 
+        //                 let event = e.dyn_ref().unwrap_thow();
+                        
+        //             });
+
+        //     }, || ())
     }
 
     html! {
         <>
-            <div>
-                {*x}{*y}
+            <div> 
+                // {*x}{*y}
             </div>
         </>
     }
