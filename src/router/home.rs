@@ -27,7 +27,8 @@ use crate::service::{postform::*, };
 use crate::hooks::{};
 use crate::hooks::{hookcounter::*, hookcounter2::*, hookcounter3::*};
 use crate::use_effect::{
-    hookcounterone::HookCounterOne
+    hookcounterone::HookCounterOne,
+    mousecontainer::MouseContainer
 };
 pub struct Home;
 
@@ -48,11 +49,13 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                    <HookCounter/>
-                    <HookCounterTwo />
-                    <HookCounterThree />
-                    <HookCounterOne/>
-                    <MouseMovement/>
+                    <MouseContainer/>
+
+                    // <HookCounter/>
+                    // <HookCounterTwo />
+                    // <HookCounterThree />
+                    // <HookCounterOne/>
+                    // <MouseMovement/>
 
                     //<PostForm />
                     // <ClickCounterTwo />

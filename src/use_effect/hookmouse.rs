@@ -1,10 +1,6 @@
 use gloo::events::EventListener;
 use yew::{prelude::*, function_component, html, Html};
 use gloo_console::{self as console, 
-
-    
-
-
 };
 use gloo_utils::{window};
 #[function_component(HookMouse)]
