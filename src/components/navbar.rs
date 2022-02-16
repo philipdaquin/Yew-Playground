@@ -10,11 +10,17 @@ pub fn navbar() -> Html {
             <div>
                 <nav>
                     <ul>
+
                         <li>
                             <Link<AppRoute> to={AppRoute::Home}><a>{"Home"}</a></Link<AppRoute>>
                         </li>
+
                         <li>
                             <Link<AppRoute> to={AppRoute::About}><a>{"About"}</a></Link<AppRoute>>
+                        </li>
+
+                        <li>
+                            <Link<AppRoute> to={AppRoute::AppReducer}><a>{"AppReducers"}</a></Link<AppRoute>>
                         </li>
                     </ul>
                 </nav>

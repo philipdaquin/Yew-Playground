@@ -15,16 +15,11 @@ pub enum AppRoute {
     
     #[at("/app_reducer")]
     AppReducer,
-
-
-    
 }
-
 pub fn switch(routes: &AppRoute) -> Html { 
     match routes { 
         AppRoute::Home => html! { <Home/>},
         AppRoute::About => html! { <NewApp/>},
         AppRoute::AppReducer => html! { <AppReducer/>},
-
     }
 }
