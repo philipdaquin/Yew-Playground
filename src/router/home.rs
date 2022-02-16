@@ -1,5 +1,6 @@
 use std::rc::Rc;
 
+use reqwasm::websocket::Message;
 use yew::prelude::*;
 use crate::components::{
     lifecycleA::LifeCycleA,
@@ -12,7 +13,6 @@ use crate::components::{
    errorboundary::ErrorBoundary,
    mousemovement::MouseMovement
 };
-use crate::contexts::{compc::CompC};
 use crate::service::postform::*;
 use crate::higherordercomp::{
     clickcounter::ClickCounter,
@@ -30,6 +30,14 @@ use crate::use_effect::{
     hookcounterone::HookCounterOne,
     mousecontainer::MouseContainer
 };
+
+use crate::usecontext::{
+    compc::CompC,
+    compe::CompE,
+    compf::CompF,
+};
+
+
 pub struct Home;
 
 impl Component for Home { 
@@ -46,11 +54,11 @@ impl Component for Home {
         false
     }
     fn view(&self, ctx: &Context<Self>) -> Html {
+
         html! {
             <>
                 <div>
-                    <MouseContainer/>
-
+                    //<MouseContainer/>
                     // <HookCounter/>
                     // <HookCounterTwo />
                     // <HookCounterThree />

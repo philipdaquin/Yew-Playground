@@ -8,7 +8,6 @@ use crate::{
     },
     router::{AppRoute, 
         home::Home,
-        about::About,
         switch,
     },
     

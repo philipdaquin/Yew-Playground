@@ -16,18 +16,18 @@ pub fn intervalhook() -> Html {
         })
     };
 
-    {
-        use_effect_with_deps(move |_| { 
-            let interval = Interval::new(1, move || set_count);
-        } ||  ()
-        )
-    }
+    // {
+    //     use_effect_with_deps(move |_| { 
+    //         let interval = Interval::new(1, move || set_count);
+    //     } ||  ()
+    //     )
+    // }
 
 
     html! {
         <>
             <div>
-                {*count}    
+              //  {*count}    
             </div>
         </>
     }
