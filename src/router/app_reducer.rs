@@ -1,5 +1,8 @@
 use yew::{prelude::*, function_component, html, Html};
-use crate::use_reducer::counterone::CounterOne;
+use crate::use_reducer::{
+    counterone::CounterOne, 
+    countertwo::CounterTwo
+};
 
 
 #[function_component(AppReducer)]
@@ -8,6 +11,8 @@ pub fn reducers() -> Html {
         <>
             <div>
                 <CounterOne/>
+                <CounterTwo/>
+
             </div>
         </>
     }

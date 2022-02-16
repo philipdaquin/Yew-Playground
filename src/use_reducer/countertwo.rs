@@ -2,8 +2,6 @@ use yew::{prelude::*, function_component, html, Html};
 use std::rc::Rc;
 
 
-
-
 pub enum Action { 
     Increment, 
     Decrement,
@@ -14,12 +12,14 @@ pub enum Action {
 #[derive(Clone, Debug, PartialEq)]
 pub struct Counter { 
     pub value: i32,
+    pub default: i32
 }
 
 impl Default for Counter { 
     fn default() -> Counter { 
         Self { 
-            value: 0
+            value: 0,
+            default: 0
         }
     }
 }
@@ -35,16 +35,17 @@ impl Reducible for Counter  {
        let curr = match action { 
            Increment => {self.value + 1},
            Decrement => {self.value -1},
-           Reset => {self.value}
+           Reset => {self.default}
        };
        Counter  { 
-           value: curr
+           value: curr,
+           default: self.default
        }.into()
     }
 }
 
-#[function_component(CounterOne)]
-pub fn counterone() -> Html {
+#[function_component(CounterTwo)]
+pub fn countertwo() -> Html {
     
     let counter = use_reducer_eq(Counter::default);
 
