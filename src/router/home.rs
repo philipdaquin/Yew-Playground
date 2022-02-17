@@ -31,11 +31,12 @@ use crate::use_effect::{
     mousecontainer::MouseContainer
 };
 
-use crate::usecontext::{
-    compc::CompC,
-    compe::CompE,
-    compf::CompF,
-};
+// use crate::usecontext::{
+//     compc::CompC,
+//     compe::CompE,
+//     compf::CompF,
+// };
+
 
 
 pub struct Home;
@@ -43,7 +44,6 @@ pub struct Home;
 impl Component for Home { 
     type Message = ();
     type Properties = ();
-
     fn create(ctx: &Context<Self>) -> Self {
         Self
     }
@@ -58,13 +58,14 @@ impl Component for Home {
         html! {
             <>
                 <div>
+                    //  Reducer and Context
+
                     //<MouseContainer/>
                     // <HookCounter/>
                     // <HookCounterTwo />
                     // <HookCounterThree />
                     // <HookCounterOne/>
                     // <MouseMovement/>
-
                     //<PostForm />
                     // <ClickCounterTwo />
                     // <HoverCounterTwo />
@@ -73,7 +74,6 @@ impl Component for Home {
                     // <ClickCounter />
                     // <HoverCount />
                     // < OriginalComponent/>
-                
                     // <ErrorBoundary >
                     //     <Hero name={"Man"}/>
                     //     <Hero name={"Man"}/>
