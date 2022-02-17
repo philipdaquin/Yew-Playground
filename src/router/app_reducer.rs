@@ -17,6 +17,8 @@ use std::rc::Rc;
 
 pub enum Action { 
     AddToCart(i32), 
+    Decrement,
+    Increment
 }
 //  Reducer's State
 #[derive(Clone, Debug, PartialEq)]
@@ -24,6 +26,7 @@ pub struct Subtotal {
     pub value: i32,
     pub quantity: i32
 }
+
 
 impl Default for Subtotal { 
     fn default() -> Subtotal { 
@@ -33,7 +36,7 @@ impl Default for Subtotal {
         }
     }
 }
-
+pub type SubtotalContext = UseReducerHandle<Subtotal>;
 impl Reducible for Subtotal  {
     /// The action type  
     /// The dispatch function takes one argument of type Action 
@@ -44,27 +47,16 @@ impl Reducible for Subtotal  {
     fn reduce(self: Rc<Self>, action: Self::Action) -> Rc<Self> { 
        let curr = match action { 
             Action::AddToCart(x) => {
-               self.value + x ;
+               self.value + x;
                self.quantity + 1
             },
+            Action::Increment => {self.quantity + 1},
+            Action::Decrement => {self.quantity - 1}
        };
        Subtotal  { 
            value: curr,
            quantity: curr
        }.into()
-    }
-}
-
-
-
-#[derive(PartialEq, Clone, Debug)]
-pub struct SubtotalHandler {
-    pub inner: UseReducerHandle<Subtotal>,
-}
-
-impl SubtotalHandler { 
-    pub fn add_to_cart(&self, price: i32) { 
-        self.inner.dispatch(Action::AddToCart(price))
     }
 }
 
@@ -87,7 +79,7 @@ pub fn reducers() -> Html {
                 <h1>{"Subtotal: "}{subtotal.value}</h1>
                 <h1>{"Total Items: "}{subtotal.quantity}</h1>
 
-                <ContextProvider<SubtotalContext> >
+                <ContextProvider<SubtotalContext> context={subtotal}>
                     <CompA/>
                     <CompB/>
                     <CompC/>
