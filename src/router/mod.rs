@@ -1,7 +1,8 @@
 pub mod newapp;
 pub mod home;
 pub mod app_reducer;
-use crate::router::{home::Home, newapp::NewApp, app_reducer::AppReducer};
+pub mod cartprovider;
+use crate::router::{home::Home, newapp::NewApp, app_reducer::AppReducer, cartprovider::CartProvider};
 use yew_router::prelude::*;
 use yew::prelude::*;
 
@@ -15,11 +16,16 @@ pub enum AppRoute {
     
     #[at("/app_reducer")]
     AppReducer,
+
+    #[at("/Addtocart")]
+    AddToCart
 }
 pub fn switch(routes: &AppRoute) -> Html { 
     match routes { 
         AppRoute::Home => html! { <Home/>},
         AppRoute::About => html! { <NewApp/>},
         AppRoute::AppReducer => html! { <AppReducer/>},
+        AppRoute::AddToCart => html! { <CartProvider/>},
+
     }
 }

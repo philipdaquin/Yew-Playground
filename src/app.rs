@@ -10,8 +10,8 @@ use crate::{
         home::Home,
         switch,
     },
-    
 };
+use crate::router::cartprovider::CartProvider;
 
 pub struct App;
 
@@ -30,12 +30,13 @@ impl Component for App {
     }
     fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
-            
-            <BrowserRouter>
-                <Navbar/>
-                    <Switch<AppRoute> render={Switch::render(switch)} />
-                <Footer/>
-            </BrowserRouter>
+            <CartProvider>
+                <BrowserRouter>
+                    <Navbar/>
+                        <Switch<AppRoute> render={Switch::render(switch)} />
+                    <Footer/>
+                </BrowserRouter>
+            </CartProvider>
         }
     }
 }

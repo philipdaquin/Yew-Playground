@@ -22,6 +22,10 @@ pub fn navbar() -> Html {
                         <li>
                             <Link<AppRoute> to={AppRoute::AppReducer}><a>{"AppReducers"}</a></Link<AppRoute>>
                         </li>
+
+                        <li>
+                        <Link<AppRoute> to={AppRoute::AddToCart}><a>{"Add To Cart"}</a></Link<AppRoute>>
+                    </li>
                     </ul>
                 </nav>
             </div>
