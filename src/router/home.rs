@@ -31,6 +31,8 @@ use crate::use_effect::{
     mousecontainer::MouseContainer
 };
 
+use crate::fetching_data::datafetching::DataFetching;
+
 // use crate::usecontext::{
 //     compc::CompC,
 //     compe::CompE,
@@ -58,6 +60,9 @@ impl Component for Home {
         html! {
             <>
                 <div>
+
+
+                    <DataFetching/>
                     //  Reducer and Context
 
                     //<MouseContainer/>

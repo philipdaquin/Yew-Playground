@@ -95,7 +95,7 @@ pub fn reducers() -> Html {
                 </ ContextProvider<SubtotalContext>>
 
 
-                <DataFetchOne/>
+                // <DataFetchOne/>
 
 
             </div>
