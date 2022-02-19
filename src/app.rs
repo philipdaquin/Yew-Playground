@@ -30,13 +30,12 @@ impl Component for App {
     }
     fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
-            <CartProvider>
                 <BrowserRouter>
                     <Navbar/>
                         <Switch<AppRoute> render={Switch::render(switch)} />
                     <Footer/>
                 </BrowserRouter>
-            </CartProvider>
+        
         }
     }
 }

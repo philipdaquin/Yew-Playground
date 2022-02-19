@@ -11,6 +11,7 @@ pub mod renderprop;
 pub mod use_effect;
 pub mod usecontext;
 pub mod use_reducer;
+pub mod fetching_data;
 
 
 

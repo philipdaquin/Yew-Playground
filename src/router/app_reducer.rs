@@ -6,6 +6,8 @@ use crate::use_reducer::{
     counterthree::CounterThree
 };
 
+use crate::fetching_data::data_fetching1::DataFetchOne;
+
 use crate::use_reducer::{
     compa::CompA,
     compb::CompB,
@@ -91,6 +93,11 @@ pub fn reducers() -> Html {
                     <CompB/>
                     <CompC/>
                 </ ContextProvider<SubtotalContext>>
+
+
+                <DataFetchOne/>
+
+
             </div>
         </>
     }
