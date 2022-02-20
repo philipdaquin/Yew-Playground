@@ -1,6 +1,6 @@
 use yew::{prelude::*, function_component, html, Html};
 
-use crate::usecontext::compc::CompC;
+// use crate::usecontext::compc::CompC;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct UserContext { 
@@ -24,11 +24,11 @@ pub fn newapp() -> Html {
     html! {
         <>
             <div>
-                <ContextProvider<UserContext> context={(*ctx).clone()}>
-                    <ContextProvider<ChannelContext> context={(*ctx_channel).clone()}>
-                        <CompC/>
-                    </ ContextProvider<ChannelContext>>
-                </ContextProvider<UserContext>>
+                // <ContextProvider<UserContext> context={(*ctx).clone()}>
+                //     <ContextProvider<ChannelContext> context={(*ctx_channel).clone()}>
+                //         // <CompC/>
+                //     </ ContextProvider<ChannelContext>>
+                // </ContextProvider<UserContext>>
             </div>
         </>
     }

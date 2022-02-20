@@ -1,18 +1,14 @@
 use yew::{prelude::*, function_component, html, Html};
 use crate::router;
-use crate::use_reducer::{
-    counterone::CounterOne, 
-    countertwo::CounterTwo,
-    counterthree::CounterThree
-};
-
-use crate::fetching_data::data_fetching1::DataFetchOne;
-
-use crate::use_reducer::{
-    compa::CompA,
-    compb::CompB,
-    compc::CompC
-};
+// use crate::use_reducer::{
+//     counterone::CounterOne, 
+//     countertwo::CounterTwo,
+//     counterthree::CounterThree
+// };
+// use crate::fetching_data::data_fetching1::DataFetchOne;
+// use crate::use_reducer::{
+//     compa::CompA,
+//     compb::CompB, compc::CompC };
 
 use std::rc::Rc;
 
@@ -88,11 +84,11 @@ pub fn reducers() -> Html {
                 <h1>{"Subtotal: "}{subtotal.value}</h1>
                 <h1>{"Total Items: "}{subtotal.quantity}</h1>
 
-                <ContextProvider<SubtotalContext> context={subtotal}>
-                    <CompA/>
-                    <CompB/>
-                    <CompC/>
-                </ ContextProvider<SubtotalContext>>
+                // <ContextProvider<SubtotalContext> context={subtotal}>
+                //     // <CompA/>
+                //     // <CompB/>
+                //     // <CompC/>
+                // </ ContextProvider<SubtotalContext>>
 
 
                 // <DataFetchOne/>
