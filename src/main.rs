@@ -14,7 +14,7 @@ pub mod use_reducer;
 pub mod fetching_data;
 pub mod datafetching;
 pub mod use_hooks;
-
+pub mod use_memo;
 
 
 use crate::app::App;

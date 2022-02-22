@@ -1,5 +1,6 @@
 use yew::prelude::*;
 use crate::use_hooks::use_async::UseAsync;
+use crate::use_memo::counter::Counter;
 pub struct Home;
 
 impl Component for Home { 
@@ -19,7 +20,8 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                    <UseAsync/>
+                    // <UseAsync/>
+                    <Counter/>
                 </div>
             </>
         }
