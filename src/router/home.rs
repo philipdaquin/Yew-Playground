@@ -1,5 +1,5 @@
 use yew::prelude::*;
-
+use crate::use_hooks::use_async::UseAsync;
 pub struct Home;
 
 impl Component for Home { 
@@ -19,7 +19,7 @@ impl Component for Home {
         html! {
             <>
                 <div>
-                    
+                    <UseAsync/>
                 </div>
             </>
         }
