@@ -53,20 +53,20 @@ impl Reducible for InitialState {
 pub fn datafetchingtwo() -> Html {
     let state = use_reducer(InitialState::default);
 
-    use_effect_with_deps(
-         spawn_local( async move |_| { 
-            let state = state.clone();
-            Request::get("http://api.open-notify.org/iss-now.json")
-                .send()
-                .await
-                .unwrap()
-                .json()
-                .await
-                .unwrap();
-            Callback::from(move |_| state.dispatch(Action::FetchSuccess));
-        )
+    // use_effect_with_deps(
+    //      spawn_local( async move |_| { 
+    //         let state = state.clone();
+    //         Request::get("http://api.open-notify.org/iss-now.json")
+    //             .send()
+    //             .await
+    //             .unwrap()
+    //             .json()
+    //             .await
+    //             .unwrap();
+    //         Callback::from(move |_| state.dispatch(Action::FetchSuccess));
+    //     )
                 
-        }, ());
+    //     }, ());
 
     html! {
         <>
