@@ -3,7 +3,7 @@ use crate::use_hooks::use_async::UseAsync;
 use crate::use_memo::counter::Counter;
 use crate::use_ref::focusinput::FocusInput;
 use crate::use_ref::{classtimer::ClassTimer, hooktimer::HookTimer};
-
+use crate::custom_hooks::{document_title::DocumentTitle, doctitle2::DocumentTwo};
 pub struct Home;
 
 impl Component for Home { 
@@ -25,9 +25,12 @@ impl Component for Home {
                 <div>
                     // <UseAsync/>
                     // <Counter/>
-                    <FocusInput />
-                    <ClassTimer/>
-                    <HookTimer/>
+                    // <FocusInput />
+                    // <ClassTimer/>
+                    // <HookTimer/>
+                    <DocumentTitle/>
+                    <DocumentTwo/>
+
                 </div>
             </>
         }
