@@ -2,6 +2,8 @@ use yew::prelude::*;
 use crate::use_hooks::use_async::UseAsync;
 use crate::use_memo::counter::Counter;
 use crate::use_ref::focusinput::FocusInput;
+use crate::use_ref::{classtimer::ClassTimer, hooktimer::HookTimer};
+
 pub struct Home;
 
 impl Component for Home { 
@@ -24,6 +26,8 @@ impl Component for Home {
                     // <UseAsync/>
                     // <Counter/>
                     <FocusInput />
+                    <ClassTimer/>
+                    <HookTimer/>
                 </div>
             </>
         }
