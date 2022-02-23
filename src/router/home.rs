@@ -1,7 +1,8 @@
 use yew::prelude::*;
-use crate::custom_hooks::{document_title::DocumentTitle, doctitle2::DocumentTwo};
-pub struct Home;
 
+use crate::use_form::use_forms::UseForm;
+
+pub struct Home;
 impl Component for Home { 
     type Message = ();
     type Properties = ();
@@ -18,16 +19,7 @@ impl Component for Home {
 
         html! {
             <>
-                <div>
-                    // <UseAsync/>
-                    // <Counter/>
-                    // <FocusInput />
-                    // <ClassTimer/>
-                    // <HookTimer/>
-                    <DocumentTitle/>
-                    <DocumentTwo/>
-
-                </div>
+                <UseForm />
             </>
         }
     }
