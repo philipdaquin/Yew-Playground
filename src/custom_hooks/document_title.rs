@@ -24,7 +24,7 @@ pub fn use_documentsssss() -> Html {
     html! {
         <> 
             <div>
-                <button onclick={set_count}>{"Count - "}{(count).clone()}</button>
+                <button onclick={set_count}>{"Count - "}{(*count).clone()}</button>
             </div>
         </>
     }
